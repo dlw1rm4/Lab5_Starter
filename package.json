@@ -1,8 +1,22 @@
 {
   "devDependencies": {
+<<<<<<< HEAD
     "jest": "^30.3.0"
   },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
 }
 }
+=======
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "type": "module",
+  "jest": {
+    "transform": {},
+    "verbose": true
+  }
+}
+>>>>>>> f0e003f52604a356cb3d9df7d814983a44879bd5
