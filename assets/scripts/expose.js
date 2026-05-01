@@ -10,6 +10,8 @@ function init() {
   const playButton = document.querySelector('button');
   const audio = document.querySelector('audio');
   const volumeSlider = document.getElementById('volume');
+  const volImg = document.querySelector('#volume-controls img');
+  const img = document.querySelector('img');
 
   hornSelect.addEventListener('change', () => {
     if (hornSelect.value === 'air-horn') {
@@ -28,7 +30,26 @@ function init() {
 
   volumeSlider.addEventListener('input', () => {
     audio.volume = volumeSlider.value / 100;
-    
+    if (volumeSlider.value === '0') {
+      volImg.src = 'assets/icons/volume-level-0.svg';
+      volImg.alt = 'Volume level 0';
+    }
+    else if (volumeSlider.value < 33) {
+      volImg.src = 'assets/icons/volume-level-1.svg';
+      volImg.alt = 'Volume level 1';
+    }
+    else if (volumeSlider.value < 67) {
+      volImg.src = 'assets/icons/volume-level-2.svg';
+      volImg.alt = 'Volume level 2';
+    }
+    else if (volumeSlider.value <= 100) {
+      volImg.src = 'assets/icons/volume-level-3.svg';
+      volImg.alt = 'Volume level 3';
+    }
+    else {
+      volImg.src = 'assets/icons/volume-level-2.svg';
+      volImg.alt = 'Volume level 2';
+    }
   });
 
     playButton.addEventListener('click', () => {
