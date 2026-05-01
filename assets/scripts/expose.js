@@ -14,17 +14,21 @@ function init() {
   hornSelect.addEventListener('change', () => {
     if (hornSelect.value === 'air-horn') {
       audio.src = 'assets/audio/air-horn.mp3';
+      img.src = 'assets/images/air-horn.svg';
     }
     else if (hornSelect.value === 'car-horn') {
       audio.src = 'assets/audio/car-horn.mp3';
+      img.src = 'assets/images/car-horn.svg';
     }
     else if (hornSelect.value === 'party-horn') {
       audio.src = 'assets/audio/party-horn.mp3';
+      img.src = 'assets/images/party-horn.svg';
     }
   });
 
   volumeSlider.addEventListener('input', () => {
     audio.volume = volumeSlider.value / 100;
+    
   });
 
     playButton.addEventListener('click', () => {
