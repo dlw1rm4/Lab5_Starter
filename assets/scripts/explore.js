@@ -8,6 +8,7 @@ function init() {
     const button = document.querySelector('button');
     const textarea = document.querySelector('textarea');
     const synth = window.speechSynthesis;
+    const face_speak = document.querySelector('img');
 
     function populateVoiceList() {
         if (typeof speechSynthesis === 'undefined') {
@@ -39,6 +40,15 @@ function init() {
                 utterThis.voice = synth.getVoices()[i];
             }
         }
+        utterThis.onstart = () => {
+          face_speak.src = 'assets/images/smiling-open.png'
+          face_speak.alt = "Smiling face with mouth open";
+        };
+
+        utterThis.onend = () => {
+          face_speak.src = 'assets/images/smiling.png';
+          face_speak.alt = "Smiling face";
+        };
         synth.speak(utterThis);
     });
         
