@@ -48,6 +48,8 @@ test('tests hex color: #00000', () => {
 
 test('tests hex color: white', () => {
     expect(isHexColor('white')).toBe(false);
+});
+
 // isPhoneNumber tests
 test('valid phone number 1', () => {
   expect(isPhoneNumber('123-456-7890')).toBe(true);
